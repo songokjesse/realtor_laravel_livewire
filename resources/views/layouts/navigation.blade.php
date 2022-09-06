@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('locations')" :active="request()->routeIs('locations')">
                         {{ __('Location') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('ownership')" :active="request()->routeIs('ownership')">
+                        {{ __('Ownership') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -74,6 +77,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('categories')" :active="request()->routeIs('categories')">
                 {{ __('Category') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('locations')" :active="request()->routeIs('locations')">
+                {{ __('Location') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('ownership')" :active="request()->routeIs('ownership')">
+                {{ __('Ownership') }}
             </x-responsive-nav-link>
         </div>
 
