@@ -26,18 +26,18 @@ class Locations extends Component
     public function store() {
         $validatedData = $this->validate(
             [
-                'name' => 'required'
+                'name' => 'required|unique:locations'
             ]
         );
         Location::create($validatedData);
-        session()->flash('message', 'Category Created Successfully!');
+        session()->flash('message', 'Location Created Successfully!');
         $this->resetInputFields();
     }
     public function edit($id)
     {
-        $category = Location::findOrFail($id);
+        $location = Location::findOrFail($id);
         $this->location_id = $id;
-        $this->name = $category->name;
+        $this->name = $location->name;
         $this->updateMode = true;
     }
 
