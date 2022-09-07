@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\Categories\Categories;
 use App\Http\Livewire\Admin\Locations\Locations;
+use App\Http\Livewire\Admin\Property\Properties;
 use App\Http\Livewire\Ownerships;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,6 @@ Route::get('/dashboard', function () {
 Route::get('/admin/categories', Categories::class)->middleware(['auth'])->name('categories');
 Route::get('/admin/locations', Locations::class)->middleware(['auth'])->name('locations');
 Route::get('/admin/ownership', Ownerships::class)->middleware(['auth'])->name('ownership');
+Route::get('/admin/properties', Properties::class)->middleware(['auth'])->name('properties');
 
 require __DIR__.'/auth.php';

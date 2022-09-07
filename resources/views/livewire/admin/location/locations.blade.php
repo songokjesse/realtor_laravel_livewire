@@ -40,6 +40,9 @@
                     </tbody>
 
                 </table>
+                <div class="mt-2">
+                    {{ $locations->links() }}
+                </div>
             </div>
                 </div>
             </div>

@@ -4,16 +4,20 @@ namespace App\Http\Livewire\Admin\Locations;
 
 use App\Models\Location;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Locations extends Component
 {
-    public  $locations, $location_id, $name;
+    use WithPagination;
+    public   $location_id, $name;
     public bool $updateMode = false;
 
     public function render()
     {
-        $this->locations = Location::all();
-        return view('livewire.admin.location.locations')
+//        $this->locations = Location::all();
+        return view('livewire.admin.location.locations',  [
+            'locations' => Location::paginate(10),
+        ])
             ->layout('layouts.app',['header' => 'Locations']);
     }
     public function resetInputFields(){
